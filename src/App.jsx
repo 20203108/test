@@ -26,7 +26,8 @@ const App = () => {
   useEffect(() => {
     tf.ready().then(async () => {
       const yolov5 = await tf.loadGraphModel(
-        `${window.location.origin}/${modelName}_web_model/model.json`,
+        // `${window.location.origin}/${modelName}_web_model/model.json`,
+        `./${modelName}_web_model/model.json`,
         {
           onProgress: (fractions) => {
             setLoading({ loading: true, progress: fractions }); // set loading fractions
