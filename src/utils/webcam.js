@@ -1,6 +1,7 @@
 /**
  * Class to handle webcam
  */
+
 export class Webcam {
   /**
    * Open webcam and stream it through video tag.
@@ -8,8 +9,7 @@ export class Webcam {
    */
   open = (videoRef) => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices
-        .getUserMedia({
+      navigator.mediaDevices.getUserMedia({
           audio: false,
           video: {
             facingMode: "environment",

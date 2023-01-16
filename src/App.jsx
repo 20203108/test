@@ -3,7 +3,7 @@ import * as tf from "@tensorflow/tfjs";
 import "@tensorflow/tfjs-backend-webgl"; // set backend to webgl
 import Loader from "./components/loader";
 import ButtonHandler from "./components/btn-handler";
-import { detectImage, detectVideo } from "./utils/detect";
+import { detectVideo } from "./utils/detect";
 import "./style/App.css";
 
 const App = () => {
@@ -14,19 +14,18 @@ const App = () => {
   }); // init model & input shape
 
   // references
-  const imageRef = useRef(null);
   const cameraRef = useRef(null);
-  const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
   // model configs
+  // const modelName = "best";
   const modelName = "yolov5n";
   const classThreshold = 0.2;
 
   useEffect(() => {
     tf.ready().then(async () => {
       const yolov5 = await tf.loadGraphModel(
-        `${window.location.origin}/${modelName}_web_model/model.json`,
+        `./${modelName}_web_model/model.json`,
         {
           onProgress: (fractions) => {
             setLoading({ loading: true, progress: fractions }); // set loading fractions
@@ -51,7 +50,7 @@ const App = () => {
   return (
     <div className="App">
       {loading.loading && <Loader>Loading model... {(loading.progress * 100).toFixed(2)}%</Loader>}
-      <div className="header">
+      {/* <div className="header">
         <h1>📷 YOLOv5 Live Detection App</h1>
         <p>
           YOLOv5 live detection application on browser powered by <code>tensorflow.js</code>
@@ -59,30 +58,22 @@ const App = () => {
         <p>
           Serving : <code className="code">{modelName}</code>
         </p>
-      </div>
+      </div> */}
 
       <div className="content">
-        <img
-          src="#"
-          ref={imageRef}
-          onLoad={() => detectImage(imageRef.current, model, classThreshold, canvasRef.current)}
-        />
-        <video
+        <video id="video"
+          playsinline
           autoPlay
           muted
           ref={cameraRef}
           onPlay={() => detectVideo(cameraRef.current, model, classThreshold, canvasRef.current)}
         />
-        <video
-          autoPlay
-          muted
-          ref={videoRef}
-          onPlay={() => detectVideo(videoRef.current, model, classThreshold, canvasRef.current)}
-        />
+        
         <canvas width={model.inputShape[1]} height={model.inputShape[2]} ref={canvasRef} />
       </div>
 
-      <ButtonHandler imageRef={imageRef} cameraRef={cameraRef} videoRef={videoRef} />
+      <ButtonHandler cameraRef={cameraRef} />
+
     </div>
   );
 };

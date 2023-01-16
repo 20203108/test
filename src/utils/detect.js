@@ -42,23 +42,23 @@ const preprocess = (source, modelWidth, modelHeight) => {
  * @param {Number} classThreshold class threshold
  * @param {HTMLCanvasElement} canvasRef canvas reference
  */
-export const detectImage = async (imgSource, model, classThreshold, canvasRef) => {
-  const [modelWidth, modelHeight] = model.inputShape.slice(1, 3); // get model width and height
+// export const detectImage = async (imgSource, model, classThreshold, canvasRef) => {
+//   const [modelWidth, modelHeight] = model.inputShape.slice(1, 3); // get model width and height
 
-  tf.engine().startScope(); // start scoping tf engine
-  const [input, xRatio, yRatio] = preprocess(imgSource, modelWidth, modelHeight);
+//   tf.engine().startScope(); // start scoping tf engine
+//   const [input, xRatio, yRatio] = preprocess(imgSource, modelWidth, modelHeight);
 
-  await model.net.executeAsync(input).then((res) => {
-    const [boxes, scores, classes] = res.slice(0, 3);
-    const boxes_data = boxes.dataSync();
-    const scores_data = scores.dataSync();
-    const classes_data = classes.dataSync();
-    renderBoxes(canvasRef, classThreshold, boxes_data, scores_data, classes_data, [xRatio, yRatio]); // render boxes
-    tf.dispose(res); // clear memory
-  });
+//   await model.net.executeAsync(input).then((res) => {
+//     const [boxes, scores, classes] = res.slice(0, 3);
+//     const boxes_data = boxes.dataSync();
+//     const scores_data = scores.dataSync();
+//     const classes_data = classes.dataSync();
+//     renderBoxes(canvasRef, classThreshold, boxes_data, scores_data, classes_data, [xRatio, yRatio]); // render boxes
+//     tf.dispose(res); // clear memory
+//   });
 
-  tf.engine().endScope(); // end of scoping
-};
+//   tf.engine().endScope(); // end of scoping
+// };
 
 /**
  * Function to detect video from every source.
@@ -94,7 +94,7 @@ export const detectVideo = (vidSource, model, classThreshold, canvasRef) => {
       ]); // render boxes
       tf.dispose(res); // clear memory
     });
-
+    
     requestAnimationFrame(detectFrame); // get another frame
     tf.engine().endScope(); // end of scoping
   };
