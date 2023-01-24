@@ -709,22 +709,19 @@ div.caution p {
         
         //ボイス判別
         if(normal==1){
-            alert("選ばれたのは、通常でした")
+            localStorage.setItem("voiceType", 0);
         }else if(hiroyuki==1){
-            alert("選ばれたのは、ひろゆきでした")
+            localStorage.setItem("voiceType", 1);
         }else if(yukkuri==1){
-            alert("選ばれたのは、ゆっくりでした")
+            localStorage.setItem("voiceType", 2);
         }
-        
-        //案内判別
-        alert("一時停止＝"+teishi);
-        alert("人＝"+human);
-        alert("横断歩道＝"+oudan);
-    
+
         if(teishi==0 && human==0 && oudan==0){
             alert("1つ以上選択してください。");
         }else{
-            alert("案内画面へ");
+            localStorage.setItem("stop", teishi);
+            localStorage.setItem("cross", oudan);
+            localStorage.setItem("human", human);
             window.location.href = "./index.html";
     }
     });
