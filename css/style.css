@@ -1,0 +1,316 @@
+.setting {
+    display: inline-block;
+    margin: 3vw;
+    float: left;
+}
+
+#setting2 {
+    display: inline-block;
+    margin: 3vw;
+    float: left;
+    text-align: left ;
+}
+
+.modal_box {
+    position: fixed;
+    z-index: 7777;
+    display: none;
+    width: 80%;
+    max-width: 840px;
+    margin: 0;
+    padding: 60px 2vw 80px;
+    border: 2px solid #aaa;
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.modal_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 62px;
+    font-size: 46px;
+    color: #000;
+    line-height: 62px;
+    text-align: center;
+    background: #e6e6e6;
+}
+
+.modal_close i {
+    line-height: 62px;
+    vertical-align: bottom;
+}
+
+.modal_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6666;
+    display: none;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.link_area {
+    overflow: hidden;
+    max-width: 410px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+.link_area .modal_link {
+    display: inline;
+}
+
+.link_area .modal_link a {
+    display: inline-block;
+    width: 360px;
+    color: #000;
+    line-height: 2.5;
+    text-decoration: none;
+    margin: 0 10px;
+    background: #e6e6e6;
+}
+
+#select{
+    border: solid 10px #fff;
+    display: inline-block;
+    width: 360px;
+    color: #000;
+    line-height: 2.5;
+    text-decoration: none;
+    margin: 0 10px;
+    background: #e6e6e6;
+    border-radius: 30px;
+    border: solid 10px #000;
+}
+
+.link-area ul li.modal_link:first-child a {
+    float: left;
+}
+
+.link-area ul li.modal_link:last-child a {
+    float: right;
+}
+
+span {
+    font-size: 50px;
+}
+
+
+.headline {
+    font-size: 100px;
+    display: inline;
+}
+
+#modal2 img {
+    border-radius: 30px;
+    border:solid 10px #000;
+}
+
+#colorPicker{
+    
+    height: 100px;
+    width: 100%;
+}
+
+.info{
+    font-size: 75px;
+    margin-top:0;
+}
+    
+.caution{
+    font-size: 50;
+}
+
+body #modal8{
+    overflow: scroll;
+}
+
+#manual{
+    font-size: 50px;
+}
+
+#helpHeadline{
+    margin-bottom: 25px;
+    font-size: 70px;
+    
+}
+
+#explanation{
+    margin-top: 0;
+    font-size: 50px;
+}
+@media screen and (max-width: 769px) {
+
+    /*  ウィンドウサイズ769px以下の時のスタイル  */
+
+    .modal_box {
+        padding: 50px 2vw 40px;
+    }
+
+    .modal_close {
+        width: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    .modal_close i {
+        line-height: 44px;
+    }
+
+    .link_area {
+        margin: 25px auto 0;
+    }
+
+    .link_area .modal_link a {
+        margin: 15px auto 0;
+    }
+
+    .link_area ul li.modal_link:first-child a {
+        float: none;
+        margin-top: 0;
+    }
+
+    .link_area ul li.modal_link:last-child a {
+        float: none;
+    }
+
+}
+
+/*
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Avenir','Helvetica, Neue','Helvetica','Arial';
+}
+
+モーダルCSS 
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;サイトによってここの数値は調整
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+
+以下ボタンスタイル
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+}
+
+#help{
+    position: absolute;
+    top:130px;
+    left:40px;
+}
+
+#batu{
+    position: absolute;
+    width:30%; 
+    top:100px;
+    left:720px;
+}
+
+#annai{
+    position: absolute;
+    border:solid blue 10px;
+    width:35%;
+    height:16%; 
+    background-color:white;
+    border-radius: 40px 40px 40px 40px;
+    top:400px;
+    left:95px;
+}
+
+#annai p{
+    text-align: center;
+    font-size:60px;
+    margin-top: 105px;
+}
+
+#voice{
+    position: absolute;
+    border:solid blue 10px;
+    width:35%;
+    height:16%; 
+    background-color:white;
+    border-radius: 40px 40px 40px 40px;
+    top:400px;
+    left:540px;
+}
+
+#voice p{
+    text-align: center;
+    font-size:60px;
+    margin-top:70px;
+}
+
+#color{
+    position: absolute;
+    border:solid blue 10px;
+    width:35%;
+    height:16%; 
+    background-color:white;
+    border-radius: 40px 40px 40px 40px;
+    top:840px;
+    left:95px;
+}
+
+#color p{
+    text-align: center;
+    margin-top:105px; 
+    font-size:60px;
+}
+
+#ziko{
+    position: absolute;
+    border:solid red 10px;
+    width:35%;
+    height:16%; 
+    background-color:white;
+    border-radius: 40px 40px 40px 40px;
+    top:840px;
+    left:540px;
+}
+
+#ziko p{
+    text-align: center;
+    font-size:60px;
+    margin-top:70px; 
+}
+*/
