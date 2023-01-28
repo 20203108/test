@@ -1,5 +1,5 @@
 $(function () {
-    console.log("a");
+    alert("a");
     //下行は連結時に消す
     // var stop = 0;
     // var human = 0;
@@ -42,7 +42,7 @@ $(function () {
 
     // 「.setting」をクリックしたらモーダルと黒い背景を表示する
     $('.setting').click(function () {
-        console.log("b");
+        alert("b");
         // 黒い背景をbody内に追加
         $('body').append('<div class="modal_bg"></div>');
         $('.modal_bg').fadeIn();
