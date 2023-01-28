@@ -1,4 +1,5 @@
 $(function () {
+    console.log("a");
     //下行は連結時に消す
     // var stop = 0;
     // var human = 0;
@@ -41,7 +42,7 @@ $(function () {
 
     // 「.setting」をクリックしたらモーダルと黒い背景を表示する
     $('.setting').click(function () {
-
+        console.log("b");
         // 黒い背景をbody内に追加
         $('body').append('<div class="modal_bg"></div>');
         $('.modal_bg').fadeIn();
@@ -189,14 +190,14 @@ $(function () {
     //色変更画面
     $('#stopColorOk').click(function () {
         stopColor=$("#stopColorOk").val();
-        localStorage.setItem("stopColor");
+        localStorage.setItem("stopColor", stopColor);
     });
     $('#humanColorOk').click(function () {
-        stopColor=$("#humanColorOk").val();
-        localStorage.setItem("humanColor");
+        humanColor=$("#humanColorOk").val();
+        localStorage.setItem("humanColor", humanColor);
     });
     $('#crossColorOk').click(function () {
-        stopColor=$("#crossColorOk").val();
-        localStorage.setItem("crossColor");
+        crossColor=$("#crossColorOk").val();
+        localStorage.setItem("crossColor", crossColor);
     });
 });
