@@ -7,6 +7,15 @@ $(function () {
     var stopColor=localStorage.getItem("stopColor");
     var humanColor=localStorage.getItem("humanColor");
     var crossColor=localStorage.getItem("crossColor");
+    if(stopColor == ""){
+        stopColor = "#ff0000";
+    }
+    if(humanColor == ""){
+        humanColor = "#00ff00";
+    }
+    if(crossColor == ""){
+        crossColor = "#0000ff";
+    }
 
     $(".colorPickerStop").val(stopColor);
     $(".colorPickerHuman").val(humanColor);
@@ -74,12 +83,6 @@ $(function () {
         // .modal_switchを押すとモーダルを切り替える
         $('.modal_switch').click(function () {
 
-            // 押された.modal_switchの親要素の.modal_boxをフェードアウトさせる
-            $(this).parents('.modal_box').fadeOut();
-
-            // 押された.modal_switchのdata-targetの内容をIDにしてmodalに代入
-            var modal = '#' + $(this).attr('data-target');
-
             // モーダルをウィンドウの中央に配置する
             function modalResize() {
                 var w = $(window).width();
@@ -94,15 +97,52 @@ $(function () {
                 });
             }
 
-            // modalResizeを実行
-            modalResize();
+            var id = $(this).attr('id');
+            if(stop==1 || human==1 || cross==1){
+                if(id == "guideChange"){
+                    localStorage.setItem("stop", stop);
+                    localStorage.setItem("human", human);
+                    localStorage.setItem("cross", cross);
 
-            $(modal).fadeIn();
+                    var stopImg = document.getElementById("guidance1");
+                    var humanImg = document.getElementById("guidance2");
+                    var crossImg = document.getElementById("guidance3");
 
-            // ウィンドウがリサイズされたらモーダルの位置を再計算する
-            $(window).on('resize', function () {
+                    var stopJudge = stop;
+                    var humanJudge = human;
+                    var crossJudge = cross;
+
+                    if(stopJudge == 0 && stopImg != null){
+                        stopImg.style.display = "none";
+                        humanImg.parentNode.insertBefore(humanImg, stopImg);
+                        crossImg.parentNode.insertBefore(crossImg, humanImg);
+                    }
+                    if(humanJudge == 0 && humanImg != null){
+                        humanImg.style.display = "none";
+                        crossImg.parentNode.insertBefore(crossImg, humanImg);
+                    }
+                    if(crossJudge == 0 && crossImg != null){
+                        crossImg.style.display = "none";
+                    }
+                }
+                // 押された.modal_switchの親要素の.modal_boxをフェードアウトさせる
+                $(this).parents('.modal_box').fadeOut();
+
+                // 押された.modal_switchのdata-targetの内容をIDにしてmodalに代入
+                var modal = '#' + $(this).attr('data-target');
+
+                // modalResizeを実行
                 modalResize();
-            });
+
+                $(modal).fadeIn();
+
+                // ウィンドウがリサイズされたらモーダルの位置を再計算する
+                $(window).on('resize', function () {
+                    modalResize();
+                });
+            }else{
+                alert("1つ以上選択してください");
+            }
         });
     });
 
@@ -111,39 +151,31 @@ $(function () {
     //案内変更画面
     $('.img1').click(function () {
         if (stop == 0) {
-            localStorage.setItem("stop", 1);
             $('.img1').css('border', 'solid 10px #0067c0');
             stop = 1;
         } else {
-            localStorage.setItem("stop", 0);
             $('.img1').css('border', 'solid 10px #000');
             stop = 0;
         }
     });
     $('.img2').click(function () {
         if (human == 0) {
-            localStorage.setItem("human", 1);
             $('.img2').css('border', 'solid 10px #0067c0');
             human = 1;
         } else {
-            localStorage.setItem("human", 0);
             $('.img2').css('border', 'solid 10px #000');
             human = 0;
         }
     });
     $('.img3').click(function () {
         if (cross == 0) {
-            localStorage.setItem("cross", 1);
             $('.img3').css('border', 'solid 10px #0067c0');
             cross = 1;
         } else {
-            localStorage.setItem("cross", 0);
             $('.img3').css('border', 'solid 10px #000');
             cross = 0;
         }
     });
-
-
 
     //ボイス変更画面
     $('.normal').click(function () {
@@ -177,15 +209,18 @@ $(function () {
     
     //色変更画面
     $('#stopColorOk').click(function () {
-        stopColor=$("#stopColorOk").val();
+        stopColor=$(".colorPickerStop").val();
         localStorage.setItem("stopColor", stopColor);
+        $(".colorPickerStop").val(stopColor);
     });
     $('#humanColorOk').click(function () {
-        humanColor=$("#humanColorOk").val();
+        humanColor=$(".colorPickerHuman").val();
         localStorage.setItem("humanColor", humanColor);
+        $(".colorPickerHuman").val(humanColor);
     });
     $('#crossColorOk').click(function () {
-        crossColor=$("#crossColorOk").val();
+        crossColor=$(".colorPickerCross").val();
         localStorage.setItem("crossColor", crossColor);
+        $(".colorPickerCross").val(crossColor);
     });
 });
