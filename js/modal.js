@@ -1,23 +1,12 @@
 $(function () {
-    alert("a");
-    //下行は連結時に消す
-    // var stop = 0;
-    // var human = 0;
-    // var cross = 0;
-    // var voiceType = 0;
-    // var stopColor = "#ff0000";
-    // var humanColor = "#00ff00";
-    // var crossColor = "#0000ff";
-
-
     //初期設定
-       var stop=localStorage.getItem("stop");
-       var human=localStorage.getItem("human");
-       var cross=localStorage.getItem("cross");
-       var voiceType=localStorage.getItem("voiceType");
-       var stopColor=localStorage.getItem("stopColor");
-       var humanColor=localStorage.getItem("humanColor");
-       var crossColor=localStorage.getItem("crossColor");
+    var stop=localStorage.getItem("stop");
+    var human=localStorage.getItem("human");
+    var cross=localStorage.getItem("cross");
+    var voiceType=localStorage.getItem("voiceType");
+    var stopColor=localStorage.getItem("stopColor");
+    var humanColor=localStorage.getItem("humanColor");
+    var crossColor=localStorage.getItem("crossColor");
 
     $(".colorPickerStop").val(stopColor);
     $(".colorPickerHuman").val(humanColor);
@@ -42,22 +31,21 @@ $(function () {
 
     // 「.setting」をクリックしたらモーダルと黒い背景を表示する
     $('.setting').click(function () {
-        alert("b");
         // 黒い背景をbody内に追加
         $('body').append('<div class="modal_bg"></div>');
         $('.modal_bg').fadeIn();
 
         // data-targetの内容をIDにしてmodalに代入
         var modal = '#' + $(this).attr('data-target');
-
+        
         // モーダルをウィンドウの中央に配置する
         function modalResize() {
             var w = $(window).width();
             var h = $(window).height();
-
+            
             var x = (w - $(modal).outerWidth(true)) / 2;
             var y = (h - $(modal).outerHeight(true)) / 2;
-
+            
             $(modal).css({
                 'left': x + 'px',
                 'top': y + 'px'
