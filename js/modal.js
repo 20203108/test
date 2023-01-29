@@ -104,25 +104,42 @@ $(function () {
                     localStorage.setItem("human", human);
                     localStorage.setItem("cross", cross);
 
+                    var guidance = document.getElementById("guidance");
                     var stopImg = document.getElementById("guidance1");
                     var humanImg = document.getElementById("guidance2");
                     var crossImg = document.getElementById("guidance3");
+
+                    while (guidance.firstChild) {
+                        guidance.removeChild(guidance.firstChild);
+                    }
+
+                    guidance.appendChild(stopImg);
+                    guidance.appendChild(humanImg);
+                    guidance.appendChild(crossImg);
 
                     var stopJudge = stop;
                     var humanJudge = human;
                     var crossJudge = cross;
 
-                    if(stopJudge == 0 && stopImg != null){
-                        stopImg.style.display = "none";
+                    stopImg.style.display = stopJudge == 0 ? "none" : "block";
+                    humanImg.style.display = humanJudge == 0 ? "none" : "block";
+                    crossImg.style.display = crossJudge == 0 ? "none" : "block";
+
+                    if(stopJudge==1 && humanJudge==1 && crossJudge==1){
+
+                    }else if(stopJudge==1 && humanJudge==1 && crossJudge==0){
+
+                    }else if(stopJudge==1 && humanJudge==0 && crossJudge==1){
+                        crossImg.parentNode.insertBefore(crossImg, humanImg);
+                    }else if(stopJudge==0 && humanJudge==1 && crossJudge==1){
                         humanImg.parentNode.insertBefore(humanImg, stopImg);
                         crossImg.parentNode.insertBefore(crossImg, humanImg);
-                    }
-                    if(humanJudge == 0 && humanImg != null){
-                        humanImg.style.display = "none";
-                        crossImg.parentNode.insertBefore(crossImg, humanImg);
-                    }
-                    if(crossJudge == 0 && crossImg != null){
-                        crossImg.style.display = "none";
+                    }else if(stopJudge==1 && humanJudge==0 && crossJudge==0){
+                        
+                    }else if(stopJudge==0 && humanJudge==1 && crossJudge==0){
+                        humanImg.parentNode.insertBefore(humanImg, stopImg);
+                    }else if(stopJudge==0 && humanJudge==0 && crossJudge==1){
+                        crossImg.parentNode.insertBefore(crossImg, stopImg);
                     }
                 }
                 // 押された.modal_switchの親要素の.modal_boxをフェードアウトさせる
