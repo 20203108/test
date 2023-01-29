@@ -1,13 +1,13 @@
 .setting {
     display: inline-block;
     margin: 3vw;
-    /* float: left; */
+    float: left;
 }
 
 #setting2 {
     display: inline-block;
     margin: 3vw;
-    /* float: left; */
+    float: left;
     text-align: left ;
 }
 
@@ -137,7 +137,6 @@ body #modal8{
 #helpHeadline{
     margin-bottom: 25px;
     font-size: 70px;
-    
 }
 
 #explanation{
