@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"> -->
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
     <style type="text/css">
 body {
@@ -13,62 +12,56 @@ body {
 }
 
 h1 {
+    margin:0;
+    /* background-color: #000; */
     text-align: center;
-    font-size: 300px;
-    font-family: fantasy;
-    -webkit-text-stroke: 1px #FFF;
+    font-size: 280px;
+    font-family: Impact;
+    -webkit-text-stroke: 2px #FFF;
 }
 
-p {
-    font-size: 75px;
-}
-
-.caution {
+#warning{
     background-color: #fff;
+    /* height: 80%; */
+}
+
+#warningTitle {
+    font-family: Arial;
+    /* background-color: #f00; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     left: 13px;
-    top: 400;
+    /* top: 20%; */
     display: block;
-    /* height: 1300px; */
-    width: 950px;
+    height: 100%;
+    width: 95%;
 }
 
-.cautionImage {
-    width: 100px;
-}
-
-p {
+#warningTitle p{
+    /* background-color: #0f0; */
     display: inline;
-}
-
-div.caution p {
     color: #FFCC00;
     -webkit-text-stroke: 5px #000;
     font-size: 100px;
     font-weight: 900;
 }
 
-#div {
+#warningText {
+    /* background-color: #00f; */
+    font-size:75px;
+}
 
-    /*background-color: #fff;*/
+.cautionImage {
+    width: 100px;
+}
+
+#warning {
+
+    /* background-color: #fff; */
     opacity: 0.8;
     position: absolute;
-    height:1300;
-}
-
-
-.break {
-    display: block;
-    content: "";
-    margin: 40px 0;
-}
-
-.lastBreak {
-    display: block;
-    content: "";
-    margin: 50px 0;
+    /* height:1300; */
 }
 
 .button {
@@ -79,7 +72,6 @@ div.caution p {
     width: 650;
     height: 130;
     font-size: 60px;
-
 }
 
 #openModal {
@@ -126,20 +118,15 @@ div.caution p {
 
 /*初期設定画面ここから*/
 
-
-
-
-
-
-
 /*案内変更ここから*/
 
 #Ch2 {
+    font-family: Arial;
     position:absolute;
     font-size: 150px;
     color:#ffffff;
     font-weight: 800;
-    letter-spacing : 4px;                /* 文字間 */
+    letter-spacing : 4px;   /* 文字間 */
   text-shadow    :
        4px  4px 1px #1a1aff,
       -4px  4px 1px #1a1aff,
@@ -176,8 +163,8 @@ div.caution p {
 
 #choice1C {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:25%;
     left:4%;
     border-radius: 40px 40px 40px 40px;
@@ -188,8 +175,8 @@ div.caution p {
 
 #choice2C {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:25%;
     left:36.46%;
     border-radius: 40px 40px 40px 40px;
@@ -200,8 +187,8 @@ div.caution p {
 
 #choice3C {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:25%;
     left:69%;
     border-radius: 40px 40px 40px 40px;
@@ -224,8 +211,8 @@ div.caution p {
     position: absolute;
     top:24.66%;
     left:3.1%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color:dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -235,8 +222,8 @@ div.caution p {
     position: absolute;
     top:24.66%;
     left:35.5%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color:dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -246,8 +233,8 @@ div.caution p {
     position: absolute;
     top:24.66%;
     left:68%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color: dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -264,6 +251,7 @@ div.caution p {
 
 /*ボイス変更ここから*/
 #Vh2 {
+    font-family: Arial;
     position:absolute;
     font-size: 140px;
     color:#ffffff;
@@ -285,8 +273,8 @@ div.caution p {
 
 #choice1V {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:55%;
     left:4%;
     border-radius: 40px 40px 40px 40px;
@@ -297,8 +285,8 @@ div.caution p {
 
 #choice2V {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:55%;
     left:36.46%;
     border-radius: 40px 40px 40px 40px;
@@ -309,8 +297,8 @@ div.caution p {
 
 #choice3V {
     position: absolute;
-    width: 26%;
-    height:12%;
+    width:250px;
+    height:250px;
     top:55%;
     left:69%;
     border-radius: 40px 40px 40px 40px;
@@ -325,12 +313,14 @@ div.caution p {
 }
 
 #choice1V p{
+    font-family: Arial;
     position: absolute;
     font-size:70px;
     left:56px;
 }
 
 #choice2V p{
+    font-family: Arial;
     position: absolute;
     font-size:70px;
     top:-40px;
@@ -338,6 +328,7 @@ div.caution p {
 }
 
 #choice3V p{
+    font-family: Arial;
     position: absolute;
     font-size:70px;
     top:-50px;
@@ -348,8 +339,8 @@ div.caution p {
     position: absolute;
     top:54.64%;
     left:3%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color:dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -359,8 +350,8 @@ div.caution p {
     position: absolute;
     top:54.64%;
     left:35.5%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color:dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -370,8 +361,8 @@ div.caution p {
     position: absolute;
     top:54.64%;
     left:68%;
-    width:28%;
-    height:12.9%;
+    width:270px;
+    height:270px;
     background-color: dodgerblue;
     z-index:2;
     border-radius: 40px 40px 40px 40px;
@@ -386,9 +377,10 @@ div.caution p {
     top:74%;
     left:9%;
     width:35%;
-    font-family: cursive;
+    font-family: Arial;
     background-color: white;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 100px;
+    font-size: 40px;
 }
 
 #startBtn{
@@ -398,50 +390,32 @@ div.caution p {
     top:74%;
     left:54%;
     width:35%;
-    font-family: cursive;
+    font-family: Arial;
     background-color: white;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 100px;
+    font-size: 40px;
 }
+
     </style>
 </head>
 
 <body>
 
     <h1>OFAS</h1>
-    <div id="div" class="caution">
-        <img class="cautionImage" src="./img/caution.png">
-        <p>
-            注意事項
-        </p>
-        <img class="cautionImage" src="./img/caution.png">
+    <div id="warning">
+        <div id="warningTitle">
+            <img class="cautionImage" src="./img/caution.png">
+            <p>注意事項</p>
+            <img class="cautionImage" src="./img/caution.png">
+        </div>
+        <div id="warningText">
+            ・スマホカメラが前方を向くように固定してください。<br>
+            ・わき見運転は控えましょう。<br>
+            ・停車中に音量調整をしましょう。<br>
+            ・スタンドを事前に準備してください。<br>
+        </div>
     </div>
-    <div id="div">
 
-        <p class="class">
-            ・スマホカメラが前方を向
-            <br>
-            　くように固定してくださ
-            <br>
-            　い。
-            <br>
-            <br class="break">
-            ・わき見運転は控えましょ
-            <br>
-            　う。
-            <br>
-            <br class="break">
-            ・停車中に音量調整をしま
-            <br>
-            　しょう。
-            <br>
-            <br class="break">
-            ・スタンドを事前に準備し
-            <br>
-            　てください。
-            <br class="lastBreak">
-        </p>
-
-    </div>
     <button id="openModal" class="button">スタート</button>
 
     <!-- モーダルエリアここから -->
@@ -587,13 +561,6 @@ div.caution p {
         hiroyuki=0;
         yukkuri=0;
 
-        document.getElementById("default").currentTime = 0; //連続クリックに対応
-        document.getElementById("default").play(); //通常を再生    
-        document.getElementById("hiroyuki").currentTime = 0; //連続クリックに対応
-        document.getElementById("hiroyuki").pause(); //ひろゆきを停止
-        document.getElementById("yukkuri").currentTime = 0; //連続クリックに対応
-        document.getElementById("yukkuri").pause(); //ゆっくりを停止*/
-
         if($("#choiceBack1V").is(":hidden")){
             $("#choiceBack1V").show();
             $("#choiceBack2V").hide();
@@ -607,13 +574,6 @@ div.caution p {
         hiroyuki=1;
         yukkuri=0;
 
-        document.getElementById("hiroyuki").currentTime = 0; //連続クリックに対応
-        document.getElementById("hiroyuki").play(); //通常を再生
-        document.getElementById("default").currentTime = 0; //連続クリックに対応
-        document.getElementById("default").pause(); //ひろゆきを停止
-        document.getElementById("yukkuri").currentTime = 0; //連続クリックに対応
-        document.getElementById("yukkuri").pause(); //ゆっくりを停止*/
-
         if($("#choiceBack2V").is(":hidden")){
             $("#choiceBack1V").hide();
             $("#choiceBack2V").show();
@@ -625,13 +585,6 @@ div.caution p {
         normal=0;
         hiroyuki=0;
         yukkuri=1;
-
-        document.getElementById("yukkuri").currentTime = 0; //連続クリックに対応
-        document.getElementById("yukkuri").play(); //通常を再生
-        document.getElementById("default").currentTime = 0; //連続クリックに対応
-        document.getElementById("default").pause(); //ひろゆきを停止
-        document.getElementById("hiroyuki").currentTime = 0; //連続クリックに対応
-        document.getElementById("hiroyuki").pause(); //ゆっくりを停止*/
 
         if($("#choiceBack3V").is(":hidden")){
             $("#choiceBack1V").hide();
