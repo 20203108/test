@@ -40,21 +40,24 @@ $(function () {
 
     // 「.setting」をクリックしたらモーダルと黒い背景を表示する
     $('.setting').click(function () {
+        const video = document.getElementById("video");
+        video.pause();
+
         // 黒い背景をbody内に追加
         $('body').append('<div class="modal_bg"></div>');
         $('.modal_bg').fadeIn();
 
         // data-targetの内容をIDにしてmodalに代入
         var modal = '#' + $(this).attr('data-target');
-        
+
         // モーダルをウィンドウの中央に配置する
         function modalResize() {
             var w = $(window).width();
             var h = $(window).height();
-            
+
             var x = (w - $(modal).outerWidth(true)) / 2;
             var y = (h - $(modal).outerHeight(true)) / 2;
-            
+
             $(modal).css({
                 'left': x + 'px',
                 'top': y + 'px'
@@ -73,6 +76,7 @@ $(function () {
             $('.modal_bg').fadeOut('slow', function () {
                 $('.modal_bg').remove();
             });
+            video.play();
         });
 
         // ウィンドウがリサイズされたらモーダルの位置を再計算する
@@ -99,6 +103,7 @@ $(function () {
 
             var id = $(this).attr('id');
             if(stop==1 || human==1 || cross==1){
+
                 if(id == "guideChange"){
                     localStorage.setItem("stop", stop);
                     localStorage.setItem("human", human);
@@ -135,7 +140,7 @@ $(function () {
                         humanImg.parentNode.insertBefore(humanImg, stopImg);
                         crossImg.parentNode.insertBefore(crossImg, humanImg);
                     }else if(stopJudge==1 && humanJudge==0 && crossJudge==0){
-                        
+
                     }else if(stopJudge==0 && humanJudge==1 && crossJudge==0){
                         humanImg.parentNode.insertBefore(humanImg, stopImg);
                     }else if(stopJudge==0 && humanJudge==0 && crossJudge==1){
@@ -222,8 +227,7 @@ $(function () {
             $('.yukkuri').css('border', 'solid 10px #0067c0');
         }
     });
-    
-    
+
     //色変更画面
     $('#stopColorOk').click(function () {
         stopColor=$(".colorPickerStop").val();

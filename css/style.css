@@ -5,6 +5,9 @@
     /* margin-left: 0px; */
     width: 250px;
     height: 250px;
+    position:absolute;
+    top: 0px;;
+    left: 680px;
 }
 
 #setting2 {
@@ -184,28 +187,22 @@ body #modal8{
 
 #back{
   position: absolute;
-  top:25px;
+  top:70px;
   left:20px;
   width: 150px;
   height: 150px;
-}
-
-.setting{
-  position:absolute;
-  top:0%;
-  left:70%;
 }
 
 #guidance{
   width:150px;
   float: right;
   margin-top:30%;
-  /* margin-right:-2%; */
+  margin-right: -16px;
 }
 
 #guidance img{
   display:flex;
-  width:77%;
+  width: 100px;
   padding-bottom:10px;
 }
 
