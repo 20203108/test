@@ -41,14 +41,41 @@
 
 .content > video {
   display: none;
-  width: 100%;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  /* left: 50%; */
+  /* transform: translateX(-50%) translateY(50%); */
+  min-width: 100%;
+  min-height: 100%;
+  /* background-size: cover; */
+  /* width: 100%;
   max-width: 1000px;
   max-height: 1000px;
-  border-radius: 0px;
+  border-radius: 0px; */
+}
+
+@media (aspect-ratio: 16/9), (min-aspect-ratio: 16/9) {
+  .content > video {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .content > video {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .content {
   position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: -1;
 }
 
