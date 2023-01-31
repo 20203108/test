@@ -1,4 +1,121 @@
 $(function () {
+    // $('#modalArea').fadeIn();
+    // $(".back").hide();
+
+    var teishi=0;
+    var human=0;
+    var oudan=0;
+
+    // $("#img1").click(function(){
+    //     if($("#choiceBack1C").is(":hidden")){
+    //         // $("#choiceBack1C").show();
+    //         teishi=1;
+    //     }else if($("#choiceBack1C").is(":visible")){
+    //         // $("#choiceBack1C").hide();
+    //         teishi=0;
+    //     }
+    // });
+
+    // $("#img2").click(function(){
+    //     if($("#choiceBack2C").is(":hidden")){
+    //         $("#choiceBack2C").show();
+    //         human=1;
+    //     }else if($("#choiceBack2C").is(":visible")){
+    //         $("#choiceBack2C").hide();
+    //         human=0;
+    //     }
+    // });
+
+    // $("#img3").click(function(){
+    //     if($("#choiceBack3C").is(":hidden")){
+    //         $("#choiceBack3C").show();
+    //         oudan=1;
+    //     }else if($("#choiceBack3C").is(":visible")){
+    //         $("#choiceBack3C").hide();
+    //         oudan=0;
+    //     }
+    // });
+
+    // var normal=1;
+    // var hiroyuki=0;
+    // var yukkuri=0;
+
+    // $("#choiceBack2V").hide();
+    // $("#choiceBack3V").hide();
+
+    // $("#choice1V").click(function(){
+    //     normal=1;
+    //     hiroyuki=0;
+    //     yukkuri=0;
+    //     if($("#choiceBack1V").is(":hidden")){
+    //         $("#choiceBack1V").show();
+    //         $("#choiceBack2V").hide();
+    //         $("#choiceBack3V").hide();
+    //     }
+    // });
+
+    // $("#choice2V").click(function(){
+    //     normal=0;
+    //     hiroyuki=1;
+    //     yukkuri=0;
+    //     if($("#choiceBack2V").is(":hidden")){
+    //         $("#choiceBack1V").hide();
+    //         $("#choiceBack2V").show();
+    //         $("#choiceBack3V").hide();
+    //     }
+    // });
+
+    // $("#choice3V").click(function(){
+    //     normal=0;
+    //     hiroyuki=0;
+    //     yukkuri=1;
+    //     if($("#choiceBack3V").is(":hidden")){
+    //         $("#choiceBack1V").hide();
+    //         $("#choiceBack2V").hide();
+    //         $("#choiceBack3V").show();
+    //     }
+    // });
+
+    // $("#endBtn").click(function(){
+    //     teishi=0;
+    //     human=0;
+    //     oudan=0;
+    //     normal=1;
+    //     hiroyuki=0;
+    //     yukkuri=0;
+    //     $(".back").hide();
+    //     $("#choiceBack1V").show();
+    //     $("#choiceBack2V").hide();
+    //     $("#choiceBack3V").hide();
+    //     $('#modalArea').fadeOut();
+    // });
+
+    // $("#startBtn").click(function(){
+    //     if(teishi==0 && human==0 && oudan==0){
+    //         alert("1つ以上選択してください。");
+    //     }else{
+    //         //ボイス判別
+    //         if(normal==1){
+    //             localStorage.setItem("voiceType", 0);
+    //         }else if(hiroyuki==1){
+    //             localStorage.setItem("voiceType", 1);
+    //         }else if(yukkuri==1){
+    //             localStorage.setItem("voiceType", 2);
+    //         }
+    //         localStorage.setItem("stop", teishi);
+    //         localStorage.setItem("cross", oudan);
+    //         localStorage.setItem("human", human);
+    //         $('.modalBg').fadeOut();
+    //         $('.modalArea').fadeOut(200, function () {
+    //             $('.modalArea').remove();
+    //         });
+    //         // window.location.href = "./index.html";
+    // }
+    // });
+
+
+
+
     //初期設定
     var stop=localStorage.getItem("stop");
     var human=localStorage.getItem("human");
