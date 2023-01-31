@@ -157,8 +157,8 @@ $(function () {
 
     // 「.setting」をクリックしたらモーダルと黒い背景を表示する
     $('.setting').click(function () {
-        const video = document.getElementById("video");
-        video.pause();
+        const camera = document.getElementById("camera");
+        camera.pause();
 
         // 黒い背景をbody内に追加
         $('body').append('<div class="modal_bg"></div>');
