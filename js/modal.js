@@ -193,7 +193,7 @@ $(function () {
             $('.modal_bg').fadeOut('slow', function () {
                 $('.modal_bg').remove();
             });
-            video.play();
+            camera.play();
         });
 
         // ウィンドウがリサイズされたらモーダルの位置を再計算する
