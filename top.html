@@ -491,7 +491,7 @@ h1 {
         </div>
 
     </section>
-
+    <iframe src="./index.html" name="index" style="display: none;"></iframe>
     <!-- モーダルエリアここまで -->
 
     <!-- ↓body閉じタグ直前でjQueryを読み込む -->
@@ -499,12 +499,11 @@ h1 {
 
     <!--ボイス変更ここまで-->
     <script>
-$(function () {
+        $(function () {
     $('#openModal').click(function () {
-        // var audio = window.frames["index"].document.getElementById("normalStop");
-        // audio.play();
-        window.location.href = "./index.html";
-        // $('#modalArea').fadeIn();
+        var audio = window.frames["index"].document.getElementById("normalStop");
+        audio.play();
+        $('#modalArea').fadeIn();
     });
 
 /*案内変更ここから*/
@@ -622,8 +621,8 @@ $(function () {
         if(teishi==0 && human==0 && oudan==0){
             alert("1つ以上選択してください。");
         }else{
-            // var audio = window.frames["index"].document.getElementById("normalStop");
-            // audio.play();
+            var audio = window.frames["index"].document.getElementById("normalStop");
+            audio.play();
             //ボイス判別
             if(normal==1){
                 localStorage.setItem("voiceType", 0);
