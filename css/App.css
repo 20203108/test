@@ -31,13 +31,13 @@
   border-radius: 5px;
 }
 
-.content > img {
+/* .content > img {
   display: none;
   width: 100%;
   max-width: 1000px;
   max-height: 500px;
   border-radius: 0px;
-}
+} */
 
 .content > video {
   display: none;
