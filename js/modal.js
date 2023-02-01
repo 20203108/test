@@ -1,8 +1,8 @@
 $(function () {
     //初期設定
-    var stop=localStorage.getItem("stop");
-    var human=localStorage.getItem("human");
-    var cross=localStorage.getItem("cross");
+    var stop;
+    var human;
+    var cross;
     var voiceType=localStorage.getItem("voiceType");
     var stopColor=localStorage.getItem("stopColor");
     var humanColor=localStorage.getItem("humanColor");
@@ -20,15 +20,15 @@ $(function () {
     $(".colorPickerStop").val(stopColor);
     $(".colorPickerHuman").val(humanColor);
     $(".colorPickerCross").val(crossColor);
-    if (stop == 1) {
-        $('.img1').css('border', 'solid 10px #0067c0');
-    }
-    if (human == 1) {
-        $('.img2').css('border', 'solid 10px #0067c0');
-    }
-    if (cross == 1) {
-        $('.img3').css('border', 'solid 10px #0067c0');
-    }
+    // if (stop == 1) {
+    //     $('.img1').css('border', 'solid 10px #0067c0');
+    // }
+    // if (human == 1) {
+    //     $('.img2').css('border', 'solid 10px #0067c0');
+    // }
+    // if (cross == 1) {
+    //     $('.img3').css('border', 'solid 10px #0067c0');
+    // }
     if (voiceType == 0) {
         $('.normal').css('border', 'solid 10px #0067c0');
     } else if (voiceType == 1) {
@@ -102,51 +102,49 @@ $(function () {
             }
 
             var id = $(this).attr('id');
-            if(stop==1 || human==1 || cross==1){
+            if(id=="guideChangeEnter" && (stop==1 || human==1 || cross==1)){
+                localStorage.setItem("stop", stop);
+                localStorage.setItem("human", human);
+                localStorage.setItem("cross", cross);
 
-                if(id == "guideChange"){
-                    localStorage.setItem("stop", stop);
-                    localStorage.setItem("human", human);
-                    localStorage.setItem("cross", cross);
+                var guidance = document.getElementById("guidance");
+                var stopImg = document.getElementById("guidance1");
+                var humanImg = document.getElementById("guidance2");
+                var crossImg = document.getElementById("guidance3");
 
-                    var guidance = document.getElementById("guidance");
-                    var stopImg = document.getElementById("guidance1");
-                    var humanImg = document.getElementById("guidance2");
-                    var crossImg = document.getElementById("guidance3");
-
-                    while (guidance.firstChild) {
-                        guidance.removeChild(guidance.firstChild);
-                    }
-
-                    guidance.appendChild(stopImg);
-                    guidance.appendChild(humanImg);
-                    guidance.appendChild(crossImg);
-
-                    var stopJudge = stop;
-                    var humanJudge = human;
-                    var crossJudge = cross;
-
-                    stopImg.style.display = stopJudge == 0 ? "none" : "block";
-                    humanImg.style.display = humanJudge == 0 ? "none" : "block";
-                    crossImg.style.display = crossJudge == 0 ? "none" : "block";
-
-                    if(stopJudge==1 && humanJudge==1 && crossJudge==1){
-
-                    }else if(stopJudge==1 && humanJudge==1 && crossJudge==0){
-
-                    }else if(stopJudge==1 && humanJudge==0 && crossJudge==1){
-                        crossImg.parentNode.insertBefore(crossImg, humanImg);
-                    }else if(stopJudge==0 && humanJudge==1 && crossJudge==1){
-                        humanImg.parentNode.insertBefore(humanImg, stopImg);
-                        crossImg.parentNode.insertBefore(crossImg, humanImg);
-                    }else if(stopJudge==1 && humanJudge==0 && crossJudge==0){
-
-                    }else if(stopJudge==0 && humanJudge==1 && crossJudge==0){
-                        humanImg.parentNode.insertBefore(humanImg, stopImg);
-                    }else if(stopJudge==0 && humanJudge==0 && crossJudge==1){
-                        crossImg.parentNode.insertBefore(crossImg, stopImg);
-                    }
+                while (guidance.firstChild) {
+                    guidance.removeChild(guidance.firstChild);
                 }
+
+                guidance.appendChild(stopImg);
+                guidance.appendChild(humanImg);
+                guidance.appendChild(crossImg);
+
+                var stopJudge = stop;
+                var humanJudge = human;
+                var crossJudge = cross;
+
+                stopImg.style.display = stopJudge == 0 ? "none" : "block";
+                humanImg.style.display = humanJudge == 0 ? "none" : "block";
+                crossImg.style.display = crossJudge == 0 ? "none" : "block";
+
+                if(stopJudge==1 && humanJudge==1 && crossJudge==1){
+
+                }else if(stopJudge==1 && humanJudge==1 && crossJudge==0){
+
+                }else if(stopJudge==1 && humanJudge==0 && crossJudge==1){
+                    crossImg.parentNode.insertBefore(crossImg, humanImg);
+                }else if(stopJudge==0 && humanJudge==1 && crossJudge==1){
+                    humanImg.parentNode.insertBefore(humanImg, stopImg);
+                    crossImg.parentNode.insertBefore(crossImg, humanImg);
+                }else if(stopJudge==1 && humanJudge==0 && crossJudge==0){
+
+                }else if(stopJudge==0 && humanJudge==1 && crossJudge==0){
+                    humanImg.parentNode.insertBefore(humanImg, stopImg);
+                }else if(stopJudge==0 && humanJudge==0 && crossJudge==1){
+                    crossImg.parentNode.insertBefore(crossImg, stopImg);
+                }
+
                 // 押された.modal_switchの親要素の.modal_boxをフェードアウトさせる
                 $(this).parents('.modal_box').fadeOut();
 
@@ -162,13 +160,48 @@ $(function () {
                 $(window).on('resize', function () {
                     modalResize();
                 });
-            }else if(id == "guideChange"){
+            }else if(id != "guideChangeEnter"){
+                // 押された.modal_switchの親要素の.modal_boxをフェードアウトさせる
+                $(this).parents('.modal_box').fadeOut();
+
+                // 押された.modal_switchのdata-targetの内容をIDにしてmodalに代入
+                var modal = '#' + $(this).attr('data-target');
+
+                // modalResizeを実行
+                modalResize();
+
+                $(modal).fadeIn();
+
+                // ウィンドウがリサイズされたらモーダルの位置を再計算する
+                $(window).on('resize', function () {
+                    modalResize();
+                });
+            }else{
                 alert("1つ以上選択してください");
             }
         });
     });
 
-
+    $('#guideChange').click(function () {
+        stop=localStorage.getItem("stop");
+        human=localStorage.getItem("human");
+        cross=localStorage.getItem("cross");
+        if (stop == 1) {
+            $('.img1').css('border', 'solid 10px #0067c0');
+        }else{
+            $('.img1').css('border', 'solid 10px #000');
+        }
+        if (human == 1) {
+            $('.img2').css('border', 'solid 10px #0067c0');
+        }else{
+            $('.img2').css('border', 'solid 10px #000');
+        }
+        if (cross == 1) {
+            $('.img3').css('border', 'solid 10px #0067c0');
+        }else{
+            $('.img3').css('border', 'solid 10px #000');
+        }
+    });
 
     //案内変更画面
     $('.img1').click(function () {
