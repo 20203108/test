@@ -50,6 +50,13 @@ $(function () {
         // data-targetの内容をIDにしてmodalに代入
         var modal = '#' + $(this).attr('data-target');
 
+        stopColor = localStorage.getItem("stopColor");
+        humanColor = localStorage.getItem("humanColor");
+        crossColor = localStorage.getItem("crossColor");
+        $(".selectColorStop").css("border", "solid 10px "+stopColor);
+        $(".selectColorHuman").css("border", "solid 10px "+humanColor);
+        $(".selectColorCross").css("border", "solid 10px "+crossColor);
+
         // モーダルをウィンドウの中央に配置する
         function modalResize() {
             var w = $(window).width();
@@ -265,16 +272,19 @@ $(function () {
     $('#stopColorOk').click(function () {
         stopColor=$(".colorPickerStop").val();
         localStorage.setItem("stopColor", stopColor);
+        $(".selectColorStop").css("border", "solid 10px "+stopColor);
         $(".colorPickerStop").val(stopColor);
     });
     $('#humanColorOk').click(function () {
         humanColor=$(".colorPickerHuman").val();
         localStorage.setItem("humanColor", humanColor);
+        $(".selectColorHuman").css("border", "solid 10px "+humanColor);
         $(".colorPickerHuman").val(humanColor);
     });
     $('#crossColorOk').click(function () {
         crossColor=$(".colorPickerCross").val();
         localStorage.setItem("crossColor", crossColor);
+        $(".selectColorCross").css("border", "solid 10px "+crossColor);
         $(".colorPickerCross").val(crossColor);
     });
 });
