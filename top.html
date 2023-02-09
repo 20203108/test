@@ -13,7 +13,6 @@ body {
 
 h1 {
     margin:0;
-    /* background-color: #000; */
     text-align: center;
     font-size: 280px;
     font-family: Impact;
@@ -22,24 +21,20 @@ h1 {
 
 #warning{
     background-color: #fff;
-    /* height: 80%; */
 }
 
 #warningTitle {
     font-family: Arial;
-    /* background-color: #f00; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     left: 13px;
-    /* top: 20%; */
     display: block;
     height: 100%;
     width: 95%;
 }
 
 #warningTitle p{
-    /* background-color: #0f0; */
     display: inline;
     color: #FFCC00;
     -webkit-text-stroke: 5px #000;
@@ -48,7 +43,6 @@ h1 {
 }
 
 #warningText {
-    /* background-color: #00f; */
     font-size:75px;
 }
 
@@ -57,16 +51,12 @@ h1 {
 }
 
 #warning {
-
-    /* background-color: #fff; */
     opacity: 0.8;
     position: absolute;
-    /* height:1300; */
 }
 
 .button {
     padding: 10px;
-    /*background-color: #fff;*/
     border: 10px solid #000;
     border-radius: 30px;
     width: 650;
@@ -115,10 +105,6 @@ h1 {
   right: 1rem;
   cursor: pointer;
 }
-
-/*初期設定画面ここから*/
-
-/*案内変更ここから*/
 
 #Ch2 {
     font-family: Arial;
@@ -240,23 +226,13 @@ h1 {
     border-radius: 40px 40px 40px 40px;
 }
 
-/*案内変更ここまで*/
-
-
-
-
-
-
-
-
-/*ボイス変更ここから*/
 #Vh2 {
     font-family: Arial;
     position:absolute;
     font-size: 140px;
     color:#ffffff;
     font-weight: 800;
-    letter-spacing : 4px;                /* 文字間 */
+    letter-spacing : 4px;   /* 文字間 */
   text-shadow    :
        4px  4px 1px #1a1aff,
       -4px  4px 1px #1a1aff,
@@ -269,7 +245,6 @@ h1 {
     top:37%;
     left:12%;
 }
-
 
 #choice1V {
     position: absolute;
@@ -368,8 +343,6 @@ h1 {
     border-radius: 40px 40px 40px 40px;
 }
 
-/*ボイス変更ここまで*/
-
 #endBtn{
     position:absolute;
     border:solid 10px royalblue;
@@ -400,7 +373,6 @@ h1 {
 </head>
 
 <body>
-
     <h1>OFAS</h1>
     <div id="warning">
         <div id="warningTitle">
@@ -418,13 +390,8 @@ h1 {
 
     <button id="openModal" class="button">スタート</button>
 
-    <!-- モーダルエリアここから -->
     <section id="modalArea" class="modalArea">
         <div id="modalBg" class="modalBg"></div>
-
-        <!--初期設定画面ここから-->
-
-        <!--案内変更ここから-->
 
     <div id="changeArea">
 
@@ -454,10 +421,6 @@ h1 {
         <div id="choiceBack3C" class="back"></div>
 
     </div>
-
-        <!--案内変更ここまで-->
-
-        <!---ボイス変更ここから-->
 
 <div id="voiceArea">
 
@@ -492,22 +455,14 @@ h1 {
 
     </section>
 
-    <!-- モーダルエリアここまで -->
-
     <!-- ↓body閉じタグ直前でjQueryを読み込む -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <!--ボイス変更ここまで-->
     <script>
 $(function () {
     $('#openModal').click(function () {
-        // var audio = window.frames["index"].document.getElementById("normalStop");
-        // audio.play();
         window.location.href = "./index.html";
-        // $('#modalArea').fadeIn();
     });
-
-/*案内変更ここから*/
 
     $(".back").hide();
 
@@ -548,9 +503,6 @@ $(function () {
             }
         });
 
-/*案内変更ここまで*/
-
-/*ボイス変更ここから*/
     var normal=1;
     var hiroyuki=0;
     var yukkuri=0;
@@ -618,13 +570,9 @@ $(function () {
 
     //始めるボタン
     $("#startBtn").click(function(){
-
         if(teishi==0 && human==0 && oudan==0){
             alert("1つ以上選択してください。");
         }else{
-            // var audio = window.frames["index"].document.getElementById("normalStop");
-            // audio.play();
-            //ボイス判別
             if(normal==1){
                 localStorage.setItem("voiceType", 0);
             }else if(hiroyuki==1){
@@ -637,7 +585,7 @@ $(function () {
             localStorage.setItem("cross", oudan);
             localStorage.setItem("human", human);
             window.location.href = "./index.html";
-    }
+        }
     });
 
 });

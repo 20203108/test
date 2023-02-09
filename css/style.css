@@ -1,8 +1,6 @@
 .setting {
     display: inline-block;
     margin: 3vw;
-    /* float: left; */
-    /* margin-left: 0px; */
     width: 250px;
     height: 250px;
     position:absolute;
@@ -82,7 +80,6 @@
 }
 
 #select{
-    border: solid 10px #fff;
     display: inline-block;
     width: 360px;
     color: #000;
@@ -237,7 +234,7 @@ body #modal8{
     background-color: rgba(30,30,30,0.9);
     background-size: cover;
 }
-  
+
 .modalWrapper {
     position: absolute;
     top: 50%;
@@ -248,7 +245,7 @@ body #modal8{
     padding: 10px 30px;
     background-color: #fff;
 }
-  
+
 .closeModal {
     position: absolute;
     top: 0.5rem;

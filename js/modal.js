@@ -20,15 +20,7 @@ $(function () {
     $(".colorPickerStop").val(stopColor);
     $(".colorPickerHuman").val(humanColor);
     $(".colorPickerCross").val(crossColor);
-    // if (stop == 1) {
-    //     $('.img1').css('border', 'solid 10px #0067c0');
-    // }
-    // if (human == 1) {
-    //     $('.img2').css('border', 'solid 10px #0067c0');
-    // }
-    // if (cross == 1) {
-    //     $('.img3').css('border', 'solid 10px #0067c0');
-    // }
+
     if (voiceType == 0) {
         $('.normal').css('border', 'solid 10px #0067c0');
     } else if (voiceType == 1) {

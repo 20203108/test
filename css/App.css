@@ -1,10 +1,13 @@
+#body {
+  display: none;
+}
+
 .App {
   height: 100%;
   width: 100%;
   padding: 0;
   position: relative;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }
@@ -49,10 +52,6 @@
   position: absolute;
   min-width: 100%;
   min-height: 100%;
-  /* width: 100%;
-  max-width: 1000px;
-  max-height: 1000px;
-  border-radius: 0px; */
 }
 
 @media (aspect-ratio: 16/9), (min-aspect-ratio: 16/9) {
